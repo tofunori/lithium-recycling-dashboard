@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Li-Cycle Arizona Spoke Facility - Lithium Battery Recycling</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" 
+          crossorigin=""/>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="mb-4">
+            <a href="../index.html" class="btn btn-outline-primary"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+        </div>
+        
+        <div class="facility-header" style="background-image: url('../images/facilities/li-cycle-arizona.jpg');">
+            <div class="facility-header-content">
+                <h1>Li-Cycle Arizona Spoke</h1>
+                <p class="lead">Gilbert, Arizona, USA</p>
+                <span class="status-badge status-operating">Operating</span>
+            </div>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-md-8">
+                <div class="facility-detail-card">
+                    <h3>Facility Overview</h3>
+                    <p>Li-Cycle's Arizona Spoke is located in Gilbert, Arizona, at the Fiesta Tech Campus. It commenced operations in May 2022 and is capable of processing all kinds of lithium-ion batteries and manufacturing scrap, regardless of chemistry, form factor or condition, including full electric vehicle batteries without the need for discharging or dismantling.</p>
+                    
+                    <p>This facility is the first to utilize Li-Cycle's proprietary 'Generation 3' technology, which allows for direct processing of full EV battery packs. The facility is strategically located close to Li-Cycle's existing battery and manufacturing scrap supply network in the Southwestern U.S., which optimizes logistics and other efficiencies for recycling services.</p>
+                    
+                    <p>The 140,000 square-foot facility significantly expands Li-Cycle's recycling capacity in North America and supports the growing EV manufacturing ecosystem in the region.</p>
+                </div>
+                
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <div class="facility-detail-card">
+                            <h4>Technical Specifications</h4>
+                            <ul class="list-unstyled">
+                                <li><strong>Size:</strong> 140,000 square feet</li>
+                                <li><strong>Processing Capacity:</strong> 10,000 tonnes per year</li>
+                                <li><strong>Technology:</strong> Generation 3 submerged shredding</li>
+                                <li><strong>Start of Operations:</strong> May 2022</li>
+                                <li><strong>Feedstock:</strong> Manufacturing scrap and end-of-life batteries</li>
+                                <li><strong>Output:</strong> Black mass</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="facility-detail-card">
+                            <h4>Environmental Impact</h4>
+                            <ul class="list-unstyled">
+                                <li><strong>Water Usage:</strong> Minimal due to closed-loop water systems</li>
+                                <li><strong>Emissions:</strong> Low emissions due to efficient processing</li>
+                                <li><strong>Energy Consumption:</strong> Optimized for energy efficiency</li>
+                                <li><strong>Waste Reduction:</strong> Diverts batteries from landfills</li>
+                                <li><strong>Material Recovery Rate:</strong> >95% recovery of critical materials</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="facility-detail-card mt-4">
+                    <h4>Development Timeline</h4>
+                    <div class="timeline">
+                        <div class="timeline-container left">
+                            <div class="timeline-content">
+                                <h5>2021 Q1</h5>
+                                <p>Facility planning and site selection</p>
+                            </div>
+                        </div>
+                        <div class="timeline-container right">
+                            <div class="timeline-content">
+                                <h5>2021 Q3</h5>
+                                <p>Construction begins</p>
+                            </div>
+                        </div>
+                        <div class="timeline-container left">
+                            <div class="timeline-content">
+                                <h5>2022 Q2</h5>
+                                <p>Commissioning and start of operations</p>
+                            </div>
+                        </div>
+                        <div class="timeline-container right">
+                            <div class="timeline-content">
+                                <h5>2022 Q3</h5>
+                                <p>Full operational capacity reached</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="facility-detail-card">
+                    <h4>Company Information</h4>
+                    <div class="text-center mb-3">
+                        <img src="../images/logos/li-cycle.png" alt="Li-Cycle Logo" class="img-fluid" style="max-height: 80px;">
+                    </div>
+                    <p>Li-Cycle is a leading global lithium-ion battery resource recovery company and the largest lithium-ion battery recycler in North America. The company's innovative "Spoke & Hub" technologies allow for the recovery of critical materials from all types of lithium-ion batteries.</p>
+                    <a href="https://li-cycle.com" target="_blank" class="btn btn-outline-primary btn-sm mt-2"><i class="fas fa-external-link-alt"></i> Company Website</a>
+                </div>
+                
+                <div class="facility-detail-card mt-4">
+                    <h4>Location</h4>
+                    <div id="facilityMap" style="height: 250px;"></div>
+                    <p class="mt-2">
+                        <i class="fas fa-map-marker-alt"></i> Fiesta Tech Campus, Gilbert, AZ
+                    </p>
+                </div>
+                
+                <div class="facility-detail-card mt-4">
+                    <h4>Processing Technology</h4>
+                    <p>Li-Cycle's Generation 3 technology uses a submerged shredding process that can safely and efficiently process full lithium-ion battery packs without discharging or dismantling them first. This innovative approach:
+                    </p>
+                    <ul>
+                        <li>Improves safety by minimizing fire risk</li>
+                        <li>Increases processing efficiency</li>
+                        <li>Reduces manual handling requirements</li>
+                        <li>Allows for processing of mixed battery chemistries</li>
+                    </ul>
+                </div>
+                
+                <div class="facility-detail-card mt-4">
+                    <h4>Related Facilities</h4>
+                    <ul class="list-group">
+                        <li class="list-group-item"><a href="licycle-alabama.html">Li-Cycle Alabama Spoke</a></li>
+                        <li class="list-group-item"><a href="licycle-ontario.html">Li-Cycle Ontario Spoke</a></li>
+                        <li class="list-group-item"><a href="licycle-rochester.html">Li-Cycle North American Hub</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- Facility Data -->
+    <script src="../js/facilityData.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize facility map
+            const map = L.map('facilityMap').setView([33.3580617, -111.7890625], 13);
+            
+            // Add OpenStreetMap tile layer
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                maxZoom: 19
+            }).addTo(map);
+            
+            // Add facility marker
+            L.marker([33.3580617, -111.7890625]).addTo(map)
+                .bindPopup('Li-Cycle Arizona Spoke')
+                .openPopup();
+        });
+    </script>
+</body>
+</html>

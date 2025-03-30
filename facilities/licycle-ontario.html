@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Li-Cycle Ontario Spoke - Lithium Battery Recycling</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" 
+          crossorigin=""/>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="mb-4">
+            <a href="../index.html" class="btn btn-outline-primary"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+        </div>
+        
+        <div class="facility-header" style="background-image: url('../images/facilities/li-cycle-ontario.jpg');">
+            <div class="facility-header-content">
+                <h1>Li-Cycle Ontario Spoke</h1>
+                <p class="lead">Kingston, Ontario, Canada</p>
+                <span class="status-badge status-operating">Operating</span>
+            </div>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-md-8">
+                <div class="facility-detail-card">
+                    <h3>Facility Overview</h3>
+                    <p>The Li-Cycle Ontario Spoke in Kingston was the company's first commercial-scale facility and has been operational since 2019. This facility represents Li-Cycle's technological foundation and serves as proof of concept for their Spoke & Hub business model.</p>
+                    
+                    <p>As the first facility in Li-Cycle's network, the Ontario Spoke processes various forms of lithium-ion battery waste including manufacturing scrap and end-of-life batteries from various sources, including consumer electronics, energy storage systems, and electric vehicles.</p>
+                    
+                    <p>The facility utilizes Li-Cycle's patented technology to process lithium-ion batteries of various chemistries, formats, and states of charge in a safe and environmentally friendly manner. The process produces black mass, which contains critical metals such as lithium, cobalt, and nickel, which can then be processed at the company's Hub facility.</p>
+                </div>
+                
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <div class="facility-detail-card">
+                            <h4>Technical Specifications</h4>
+                            <ul class="list-unstyled">
+                                <li><strong>Processing Capacity:</strong> 5,000 tonnes per year</li>
+                                <li><strong>Technology:</strong> Mechanical processing</li>
+                                <li><strong>Start of Operations:</strong> 2019</li>
+                                <li><strong>Feedstock:</strong> Manufacturing scrap and end-of-life batteries</li>
+                                <li><strong>Output:</strong> Black mass and other recyclable materials</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="facility-detail-card">
+                            <h4>Environmental Impact</h4>
+                            <ul class="list-unstyled">
+                                <li><strong>GHG Reduction:</strong> Lower carbon footprint compared to mining</li>
+                                <li><strong>Water Usage:</strong> Limited water consumption</li>
+                                <li><strong>Waste Diversion:</strong> Prevents batteries from entering landfills</li>
+                                <li><strong>Resource Recovery:</strong> >95% recovery rate of battery materials</li>
+                                <li><strong>Land Use:</strong> Repurposed industrial facility</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="facility-detail-card mt-4">
+                    <h4>Development Timeline</h4>
+                    <div class="timeline">
+                        <div class="timeline-container left">
+                            <div class="timeline-content">
+                                <h5>2018</h5>
+                                <p>Facility planning and design</p>
+                            </div>
+                        </div>
+                        <div class="timeline-container right">
+                            <div class="timeline-content">
+                                <h5>2019</h5>
+                                <p>Facility commissioned</p>
+                            </div>
+                        </div>
+                        <div class="timeline-container left">
+                            <div class="timeline-content">
+                                <h5>2020</h5>
+                                <p>Expanded initial capacity</p>
+                            </div>
+                        </div>
+                        <div class="timeline-container right">
+                            <div class="timeline-content">
+                                <h5>2021</h5>
+                                <p>Optimization of processes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="facility-detail-card">
+                    <h4>Company Information</h4>
+                    <div class="text-center mb-3">
+                        <img src="../images/logos/li-cycle.png" alt="Li-Cycle Logo" class="img-fluid" style="max-height: 80px;">
+                    </div>
+                    <p>Li-Cycle is a leading global lithium-ion battery resource recovery company and the largest lithium-ion battery recycler in North America. The company's innovative "Spoke & Hub" technologies allow for the recovery of critical materials from all types of lithium-ion batteries.</p>
+                    <a href="https://li-cycle.com" target="_blank" class="btn btn-outline-primary btn-sm mt-2"><i class="fas fa-external-link-alt"></i> Company Website</a>
+                </div>
+                
+                <div class="facility-detail-card mt-4">
+                    <h4>Location</h4>
+                    <div id="facilityMap" style="height: 250px;"></div>
+                    <p class="mt-2">
+                        <i class="fas fa-map-marker-alt"></i> Kingston, Ontario, Canada
+                    </p>
+                </div>
+                
+                <div class="facility-detail-card mt-4">
+                    <h4>Processing Technology</h4>
+                    <p>The Ontario Spoke utilizes a mechanical processing technology to safely shred and separate lithium-ion batteries into three main components:</p>
+                    <ul>
+                        <li>Black mass (containing valuable metals like lithium, nickel, and cobalt)</li>
+                        <li>Copper and aluminum</li>
+                        <li>Plastics</li>
+                    </ul>
+                    <p>This process enables the recovery of valuable materials while avoiding thermal processing, which can result in loss of materials and higher emissions.</p>
+                </div>
+                
+                <div class="facility-detail-card mt-4">
+                    <h4>Related Facilities</h4>
+                    <ul class="list-group">
+                        <li class="list-group-item"><a href="licycle-arizona.html">Li-Cycle Arizona Spoke</a></li>
+                        <li class="list-group-item"><a href="licycle-alabama.html">Li-Cycle Alabama Spoke</a></li>
+                        <li class="list-group-item"><a href="licycle-ohio.html">Li-Cycle Ohio Spoke</a></li>
+                        <li class="list-group-item"><a href="licycle-rochester.html">Li-Cycle North American Hub</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- Facility Data -->
+    <script src="../js/facilityData.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize facility map
+            const map = L.map('facilityMap').setView([44.2311717, -76.4859544], 13);
+            
+            // Add OpenStreetMap tile layer
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                maxZoom: 19
+            }).addTo(map);
+            
+            // Add facility marker
+            L.marker([44.2311717, -76.4859544]).addTo(map)
+                .bindPopup('Li-Cycle Ontario Spoke')
+                .openPopup();
+        });
+    </script>
+</body>
+</html>

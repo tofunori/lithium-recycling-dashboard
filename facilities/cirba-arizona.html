@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cirba Solutions Arizona Facility - Lithium Battery Recycling</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" 
+          crossorigin="">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="mb-4">
+            <a href="../index.html" class="btn btn-outline-primary"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+        </div>
+        
+        <div class="facility-header" style="background-image: url('../images/facilities/cirba-arizona.jpg');">
+            <div class="facility-header-content">
+                <h1>Cirba Solutions Arizona Facility</h1>
+                <p class="lead">Eloy, AZ, USA</p>
+                <span class="status-badge status-operating">Operating</span>
+            </div>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-md-8">
+                <div class="facility-detail-card">
+                    <h3>Facility Overview</h3>
+                    <p>The Cirba Solutions Arizona Facility is located in Eloy, Arizona, and serves as a strategic processing center for battery recycling in the southwestern United States. With approximately 75,000 square feet of operating space, this facility is designed to process and recycle various types of batteries, with a growing focus on lithium-ion batteries from electric vehicles and energy storage systems.</p>
+                    
+                    <p>The Arizona facility is well-positioned to serve the growing battery manufacturing ecosystem in the Southwest region, including nearby operations in Nevada and California. It employs a range of processing technologies to safely handle, sort, and process batteries to recover valuable materials for reuse in the battery supply chain.</p>
+                    
+                    <p>As part of Cirba Solutions' national network of recycling facilities, the Eloy operation plays an important role in creating a resilient, domestic battery materials supply chain. The facility's operations align with the company's commitment to sustainable practices and circular economy principles in battery recycling.</p>
+                </div>
+                
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <div class="facility-detail-card">
+                            <h4>Technical Specifications</h4>
+                            <ul class="list-unstyled">
+                                <li><strong>Processing Capacity:</strong> 20,000+ tonnes per year</li>
+                                <li><strong>Technology:</strong> Mechanical processing and material separation</li>
+                                <li><strong>Operational Since:</strong> Pre-2021</li>
+                                <li><strong>Feedstock:</strong> Multiple battery chemistries with focus on lithium-ion</li>
+                                <li><strong>Output:</strong> Sorted materials and black mass</li>
+                                <li><strong>Facility Size:</strong> Approximately 75,000 square feet</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="facility-detail-card">
+                            <h4>Environmental Impact</h4>
+                            <ul class="list-unstyled">
+                                <li><strong>GHG Reduction:</strong> Lower carbon footprint than primary material production</li>
+                                <li><strong>Water Conservation:</strong> Water-efficient processes optimized for arid climate</li>
+                                <li><strong>Waste Diversion:</strong> High landfill diversion rate for battery materials</li>
+                                <li><strong>Resource Recovery:</strong> Efficient recovery of critical metals</li>
+                                <li><strong>Regional Impact:</strong> Reduced transportation emissions for southwest region</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="facility-detail-card mt-4">
+                    <h4>Development Timeline</h4>
+                    <div class="timeline">
+                        <div class="timeline-container left">
+                            <div class="timeline-content">
+                                <h5>Pre-2020</h5>
+                                <p>Initial facility establishment</p>
+                            </div>
+                        </div>
+                        <div class="timeline-container right">
+                            <div class="timeline-content">
+                                <h5>2021</h5>
+                                <p>Process improvements for lithium-ion batteries</p>
+                            </div>
+                        </div>
+                        <div class="timeline-container left">
+                            <div class="timeline-content">
+                                <h5>2022</h5>
+                                <p>Integration into Cirba Solutions network</p>
+                            </div>
+                        </div>
+                        <div class="timeline-container right">
+                            <div class="timeline-content">
+                                <h5>2023</h5>
+                                <p>Technology upgrades and capacity expansion</p>
+                            </div>
+                        </div>
+                        <div class="timeline-container left">
+                            <div class="timeline-content">
+                                <h5>2024</h5>
+                                <p>Enhanced operations with focus on EV batteries</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="facility-detail-card">
+                    <h4>Company Information</h4>
+                    <div class="text-center mb-3">
+                        <img src="../images/logos/cirba-solutions.png" alt="Cirba Solutions Logo" class="img-fluid" style="max-height: 80px;">
+                    </div>
+                    <p>Cirba Solutions is a comprehensive battery materials and management company that provides end-to-end solutions for the EV battery supply chain. With multiple facilities across the United States, Cirba Solutions is a leader in battery recycling and materials recovery, focusing on creating a sustainable, closed-loop ecosystem for battery materials.</p>
+                    <a href="https://www.cirbasolutions.com" target="_blank" class="btn btn-outline-primary btn-sm mt-2"><i class="fas fa-external-link-alt"></i> Company Website</a>
+                </div>
+                
+                <div class="facility-detail-card mt-4">
+                    <h4>Location</h4>
+                    <div id="facilityMap" style="height: 250px;"></div>
+                    <p class="mt-2">
+                        <i class="fas fa-map-marker-alt"></i> Eloy, AZ, USA
+                    </p>
+                </div>
+                
+                <div class="facility-detail-card mt-4">
+                    <h4>Processing Technology</h4>
+                    <p>The Arizona facility uses a comprehensive approach to battery recycling:</p>
+                    <ul>
+                        <li>Safe battery discharge and handling</li>
+                        <li>Automated sorting of various battery types</li>
+                        <li>Mechanical processing systems for size reduction</li>
+                        <li>Material separation technologies</li>
+                        <li>Black mass production and preparation</li>
+                        <li>Quality control and material categorization</li>
+                    </ul>
+                </div>
+                
+                <div class="facility-detail-card mt-4">
+                    <h4>Regional Significance</h4>
+                    <p>The Arizona facility is strategically located to serve the southwestern United States, including growing EV and battery manufacturing operations in Nevada, Arizona, and California. The Eloy location benefits from proximity to transportation routes and supports the development of a regional battery recycling ecosystem. The facility contributes to local employment and economic development while reducing the environmental impact of battery disposal in the region.</p>
+                </div>
+                
+                <div class="facility-detail-card mt-4">
+                    <h4>Related Facilities</h4>
+                    <ul class="list-group">
+                        <li class="list-group-item"><a href="cirba-ohio.html">Cirba Solutions Ohio Facility</a></li>
+                        <li class="list-group-item"><a href="cirba-southcarolina.html">Cirba Solutions South Carolina Facility</a></li>
+                        <li class="list-group-item"><a href="licycle-arizona.html">Li-Cycle Arizona Spoke</a></li>
+                        <li class="list-group-item"><a href="abtc-nevada.html">ABTC Nevada Recycling Plant</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- Facility Data -->
+    <script src="../js/facilityData.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize facility map
+            const map = L.map('facilityMap').setView([32.7557, -111.5485], 13);
+            
+            // Add OpenStreetMap tile layer
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                maxZoom: 19
+            }).addTo(map);
+            
+            // Add facility marker
+            L.marker([32.7557, -111.5485]).addTo(map)
+                .bindPopup('Cirba Solutions Arizona Facility')
+                .openPopup();
+        });
+    </script>
+</body>
+</html>

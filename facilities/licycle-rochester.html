@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Li-Cycle North American Hub - Lithium Battery Recycling</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" 
+          crossorigin=""/>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="mb-4">
+            <a href="../index.html" class="btn btn-outline-primary"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+        </div>
+        
+        <div class="facility-header" style="background-image: url('../images/facilities/li-cycle-hub.jpg');">
+            <div class="facility-header-content">
+                <h1>Li-Cycle North American Hub</h1>
+                <p class="lead">Eastman Business Park, Rochester, NY, USA</p>
+                <span class="status-badge status-planned">Planned</span>
+            </div>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-md-8">
+                <div class="facility-detail-card">
+                    <h3>Facility Overview</h3>
+                    <p>The Li-Cycle North American Hub, located at Eastman Business Park in Rochester, NY, is designed as a centralized processing facility to refine black mass from Li-Cycle's network of Spoke facilities into battery-grade materials.</p>
+                    
+                    <p>This Hub will be a first-of-its-kind facility in North America, capable of processing black mass into critical battery materials including lithium, nickel, and cobalt. The Hub represents a key component of Li-Cycle's strategy to create a closed-loop battery supply chain in North America.</p>
+                    
+                    <p>Once operational, the Rochester Hub will be able to process material equivalent to approximately 225,000 electric vehicles per year. By processing black mass generated at Li-Cycle's Spoke facilities, the Hub will demonstrate how urban mining of critical materials from spent lithium-ion batteries can help reduce reliance on mining of virgin materials.</p>
+                </div>
+                
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <div class="facility-detail-card">
+                            <h4>Technical Specifications</h4>
+                            <ul class="list-unstyled">
+                                <li><strong>Processing Capacity:</strong> 35,000 tonnes per year</li>
+                                <li><strong>Technology:</strong> Hydrometallurgical processing</li>
+                                <li><strong>Planned Start:</strong> 2025</li>
+                                <li><strong>Feedstock:</strong> Black mass from Spoke facilities</li>
+                                <li><strong>Output:</strong> Battery-grade lithium, nickel, and cobalt</li>
+                                <li><strong>EV Equivalent:</strong> ~225,000 EVs per year</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="facility-detail-card">
+                            <h4>Environmental Impact</h4>
+                            <ul class="list-unstyled">
+                                <li><strong>Emissions Reduction:</strong> Lower carbon footprint compared to primary material extraction</li>
+                                <li><strong>Resource Conservation:</strong> Reduces need for primary mining</li>
+                                <li><strong>Energy Efficiency:</strong> Optimized hydrometallurgical processes</li>
+                                <li><strong>Water Management:</strong> Closed-loop water systems</li>
+                                <li><strong>Circular Economy:</strong> Enables reuse of battery materials</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="facility-detail-card mt-4">
+                    <h4>Development Timeline</h4>
+                    <div class="timeline">
+                        <div class="timeline-container left">
+                            <div class="timeline-content">
+                                <h5>2021</h5>
+                                <p>Hub planning and design initiated</p>
+                            </div>
+                        </div>
+                        <div class="timeline-container right">
+                            <div class="timeline-content">
+                                <h5>2022</h5>
+                                <p>Regulatory approvals and permits secured</p>
+                            </div>
+                        </div>
+                        <div class="timeline-container left">
+                            <div class="timeline-content">
+                                <h5>2023</h5>
+                                <p>Site preparation and initial construction</p>
+                            </div>
+                        </div>
+                        <div class="timeline-container right">
+                            <div class="timeline-content">
+                                <h5>2025</h5>
+                                <p>Projected start of operations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="facility-detail-card">
+                    <h4>Company Information</h4>
+                    <div class="text-center mb-3">
+                        <img src="../images/logos/li-cycle.png" alt="Li-Cycle Logo" class="img-fluid" style="max-height: 80px;">
+                    </div>
+                    <p>Li-Cycle is a leading global lithium-ion battery resource recovery company and the largest lithium-ion battery recycler in North America. The company's innovative "Spoke & Hub" technologies allow for the recovery of critical materials from all types of lithium-ion batteries.</p>
+                    <a href="https://li-cycle.com" target="_blank" class="btn btn-outline-primary btn-sm mt-2"><i class="fas fa-external-link-alt"></i> Company Website</a>
+                </div>
+                
+                <div class="facility-detail-card mt-4">
+                    <h4>Location</h4>
+                    <div id="facilityMap" style="height: 250px;"></div>
+                    <p class="mt-2">
+                        <i class="fas fa-map-marker-alt"></i> Eastman Business Park, Rochester, NY, USA
+                    </p>
+                </div>
+                
+                <div class="facility-detail-card mt-4">
+                    <h4>Processing Technology</h4>
+                    <p>The Rochester Hub will employ an advanced hydrometallurgical process to recover battery-grade materials from black mass. This wet chemistry process involves:</p>
+                    <ul>
+                        <li>Selective leaching of critical metals</li>
+                        <li>Impurity removal and purification</li>
+                        <li>Metal separation and recovery</li>
+                        <li>Product finishing to meet battery-grade specifications</li>
+                    </ul>
+                    <p>This approach allows for high recovery rates of lithium, nickel, cobalt, and other valuable materials while maintaining environmental responsibility.</p>
+                </div>
+                
+                <div class="facility-detail-card mt-4">
+                    <h4>Related Facilities</h4>
+                    <ul class="list-group">
+                        <li class="list-group-item"><a href="licycle-arizona.html">Li-Cycle Arizona Spoke</a></li>
+                        <li class="list-group-item"><a href="licycle-alabama.html">Li-Cycle Alabama Spoke</a></li>
+                        <li class="list-group-item"><a href="licycle-ontario.html">Li-Cycle Ontario Spoke</a></li>
+                        <li class="list-group-item"><a href="licycle-ohio.html">Li-Cycle Ohio Spoke</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- Facility Data -->
+    <script src="../js/facilityData.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize facility map
+            const map = L.map('facilityMap').setView([43.197392, -77.6515204], 13);
+            
+            // Add OpenStreetMap tile layer
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                maxZoom: 19
+            }).addTo(map);
+            
+            // Add facility marker
+            L.marker([43.197392, -77.6515204]).addTo(map)
+                .bindPopup('Li-Cycle North American Hub')
+                .openPopup();
+        });
+    </script>
+</body>
+</html>

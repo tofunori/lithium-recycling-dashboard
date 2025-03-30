@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Li-Cycle Ohio Spoke - Lithium Battery Recycling</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" 
+          crossorigin=""/>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="mb-4">
+            <a href="../index.html" class="btn btn-outline-primary"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+        </div>
+        
+        <div class="facility-header" style="background-image: url('../images/facilities/li-cycle-ohio.jpg');">
+            <div class="facility-header-content">
+                <h1>Li-Cycle Ohio Spoke</h1>
+                <p class="lead">Warren, OH, USA</p>
+                <span class="status-badge status-construction">Under Construction</span>
+            </div>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-md-8">
+                <div class="facility-detail-card">
+                    <h3>Facility Overview</h3>
+                    <p>The Li-Cycle Ohio Spoke facility is currently under construction in Warren, Ohio. This strategic location was selected to support the growing battery manufacturing ecosystem in the Midwest region, which has seen significant investment from automotive and battery manufacturers.</p>
+                    
+                    <p>With a planned processing capacity of 15,000 tonnes per year, the Ohio Spoke will be one of Li-Cycle's larger facilities, designed to handle various forms of lithium-ion battery materials, including manufacturing scrap and end-of-life batteries from electric vehicles, energy storage systems, and consumer electronics.</p>
+                    
+                    <p>This facility will utilize mechanical processing technology to safely process lithium-ion batteries and produce black mass, which contains critical metals such as lithium, cobalt, and nickel. This black mass will be transported to Li-Cycle's Hub facility for further processing into battery-grade materials, supporting the creation of a closed-loop battery supply chain in North America.</p>
+                </div>
+                
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <div class="facility-detail-card">
+                            <h4>Technical Specifications</h4>
+                            <ul class="list-unstyled">
+                                <li><strong>Processing Capacity:</strong> 15,000 tonnes per year</li>
+                                <li><strong>Technology:</strong> Mechanical processing</li>
+                                <li><strong>Planned Start:</strong> 2024</li>
+                                <li><strong>Feedstock:</strong> Manufacturing scrap and end-of-life batteries</li>
+                                <li><strong>Output:</strong> Black mass and other recyclable materials</li>
+                                <li><strong>Facility Size:</strong> Approximately 100,000 square feet</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="facility-detail-card">
+                            <h4>Environmental Impact</h4>
+                            <ul class="list-unstyled">
+                                <li><strong>GHG Reduction:</strong> Lower carbon footprint than primary production</li>
+                                <li><strong>Water Management:</strong> Minimal water usage with recycling systems</li>
+                                <li><strong>Waste Diversion:</strong> Prevents batteries from entering landfills</li>
+                                <li><strong>Resource Recovery:</strong> High recovery rate of critical materials</li>
+                                <li><strong>Local Support:</strong> Reduces transportation emissions by serving regional manufacturers</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="facility-detail-card mt-4">
+                    <h4>Development Timeline</h4>
+                    <div class="timeline">
+                        <div class="timeline-container left">
+                            <div class="timeline-content">
+                                <h5>2022 Q3</h5>
+                                <p>Facility announced</p>
+                            </div>
+                        </div>
+                        <div class="timeline-container right">
+                            <div class="timeline-content">
+                                <h5>2023 Q1</h5>
+                                <p>Site selection and permitting</p>
+                            </div>
+                        </div>
+                        <div class="timeline-container left">
+                            <div class="timeline-content">
+                                <h5>2023 Q3</h5>
+                                <p>Construction began</p>
+                            </div>
+                        </div>
+                        <div class="timeline-container right">
+                            <div class="timeline-content">
+                                <h5>2024 Q2</h5>
+                                <p>Expected completion</p>
+                            </div>
+                        </div>
+                        <div class="timeline-container left">
+                            <div class="timeline-content">
+                                <h5>2024 Q3</h5>
+                                <p>Projected start of operations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="facility-detail-card">
+                    <h4>Company Information</h4>
+                    <div class="text-center mb-3">
+                        <img src="../images/logos/li-cycle.png" alt="Li-Cycle Logo" class="img-fluid" style="max-height: 80px;">
+                    </div>
+                    <p>Li-Cycle is a leading global lithium-ion battery resource recovery company and the largest lithium-ion battery recycler in North America. The company's innovative "Spoke & Hub" technologies allow for the recovery of critical materials from all types of lithium-ion batteries.</p>
+                    <a href="https://li-cycle.com" target="_blank" class="btn btn-outline-primary btn-sm mt-2"><i class="fas fa-external-link-alt"></i> Company Website</a>
+                </div>
+                
+                <div class="facility-detail-card mt-4">
+                    <h4>Location</h4>
+                    <div id="facilityMap" style="height: 250px;"></div>
+                    <p class="mt-2">
+                        <i class="fas fa-map-marker-alt"></i> Warren, OH, USA
+                    </p>
+                </div>
+                
+                <div class="facility-detail-card mt-4">
+                    <h4>Processing Technology</h4>
+                    <p>The Ohio Spoke will utilize mechanical processing technology to safely process lithium-ion batteries:</p>
+                    <ul>
+                        <li>Initial sorting and preparation of incoming materials</li>
+                        <li>Safe shredding process to reduce battery materials to smaller components</li>
+                        <li>Material separation to isolate black mass, copper, aluminum, and plastics</li>
+                        <li>Quality control to ensure consistent output materials</li>
+                        <li>Preparation for transport to Hub facility for final processing</li>
+                    </ul>
+                </div>
+                
+                <div class="facility-detail-card mt-4">
+                    <h4>Regional Significance</h4>
+                    <p>The Ohio Spoke is strategically positioned to serve the growing battery manufacturing ecosystem in the Midwest. The region has seen significant investment in EV and battery production facilities, making it an ideal location for battery recycling operations. The facility will create approximately 30-40 new jobs and support the development of a domestic battery supply chain.</p>
+                </div>
+                
+                <div class="facility-detail-card mt-4">
+                    <h4>Related Facilities</h4>
+                    <ul class="list-group">
+                        <li class="list-group-item"><a href="licycle-arizona.html">Li-Cycle Arizona Spoke</a></li>
+                        <li class="list-group-item"><a href="licycle-alabama.html">Li-Cycle Alabama Spoke</a></li>
+                        <li class="list-group-item"><a href="licycle-ontario.html">Li-Cycle Ontario Spoke</a></li>
+                        <li class="list-group-item"><a href="licycle-rochester.html">Li-Cycle North American Hub</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- Facility Data -->
+    <script src="../js/facilityData.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize facility map
+            const map = L.map('facilityMap').setView([41.2375569, -80.8156674], 13);
+            
+            // Add OpenStreetMap tile layer
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                maxZoom: 19
+            }).addTo(map);
+            
+            // Add facility marker
+            L.marker([41.2375569, -80.8156674]).addTo(map)
+                .bindPopup('Li-Cycle Ohio Spoke')
+                .openPopup();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cirba Solutions Ohio Facility - Lithium Battery Recycling</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" 
+          crossorigin="">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="mb-4">
+            <a href="../index.html" class="btn btn-outline-primary"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+        </div>
+        
+        <div class="facility-header" style="background-image: url('../images/facilities/cirba-ohio.jpg');">
+            <div class="facility-header-content">
+                <h1>Cirba Solutions Ohio Facility</h1>
+                <p class="lead">Lancaster, OH, USA</p>
+                <span class="status-badge status-operating">Operating</span>
+            </div>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-md-8">
+                <div class="facility-detail-card">
+                    <h3>Facility Overview</h3>
+                    <p>The Cirba Solutions Ohio Facility in Lancaster is one of the company's established battery recycling operations. This facility has recently undergone significant expansion to increase its capacity and capabilities in response to growing demand for battery recycling in North America.</p>
+                    
+                    <p>The Lancaster facility processes a wide range of battery types, including lithium-ion batteries from electric vehicles, consumer electronics, and energy storage systems. The facility employs a combination of mechanical and hydrometallurgical processes to safely and efficiently recover valuable battery materials, including lithium, nickel, cobalt, and copper.</p>
+                    
+                    <p>In 2023, Cirba Solutions announced the expansion of the Lancaster facility, which was supported in part by a $75 million grant from the U.S. Department of Energy through the Bipartisan Infrastructure Law. This expansion enhances the company's capacity to process lithium-ion batteries and supports the growing domestic battery supply chain.</p>
+                </div>
+                
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <div class="facility-detail-card">
+                            <h4>Technical Specifications</h4>
+                            <ul class="list-unstyled">
+                                <li><strong>Processing Capacity:</strong> 30,000+ tonnes per year (post-expansion)</li>
+                                <li><strong>Technology:</strong> Mechanical and hydrometallurgical processes</li>
+                                <li><strong>Operational Since:</strong> Pre-2020, with 2023 expansion</li>
+                                <li><strong>Feedstock:</strong> Various battery types with focus on lithium-ion</li>
+                                <li><strong>Output:</strong> Black mass and battery-grade materials</li>
+                                <li><strong>Facility Size:</strong> 100,000+ square feet</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="facility-detail-card">
+                            <h4>Environmental Impact</h4>
+                            <ul class="list-unstyled">
+                                <li><strong>GHG Reduction:</strong> Significant carbon reduction vs. primary production</li>
+                                <li><strong>Water Management:</strong> Advanced water treatment and recycling systems</li>
+                                <li><strong>Waste Diversion:</strong> High landfill diversion rate</li>
+                                <li><strong>Resource Recovery:</strong> >90% recovery of key battery materials</li>
+                                <li><strong>Certifications:</strong> ISO 14001 Environmental Management</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="facility-detail-card mt-4">
+                    <h4>Development Timeline</h4>
+                    <div class="timeline">
+                        <div class="timeline-container left">
+                            <div class="timeline-content">
+                                <h5>Pre-2020</h5>
+                                <p>Initial facility operations began</p>
+                            </div>
+                        </div>
+                        <div class="timeline-container right">
+                            <div class="timeline-content">
+                                <h5>2022</h5>
+                                <p>DOE grant announcement ($75M)</p>
+                            </div>
+                        </div>
+                        <div class="timeline-container left">
+                            <div class="timeline-content">
+                                <h5>2023 Q1</h5>
+                                <p>Expansion planning and design</p>
+                            </div>
+                        </div>
+                        <div class="timeline-container right">
+                            <div class="timeline-content">
+                                <h5>2023 Q3</h5>
+                                <p>Expansion construction begins</p>
+                            </div>
+                        </div>
+                        <div class="timeline-container left">
+                            <div class="timeline-content">
+                                <h5>2024</h5>
+                                <p>Expanded operations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="facility-detail-card">
+                    <h4>Company Information</h4>
+                    <div class="text-center mb-3">
+                        <img src="../images/logos/cirba-solutions.png" alt="Cirba Solutions Logo" class="img-fluid" style="max-height: 80px;">
+                    </div>
+                    <p>Cirba Solutions is a comprehensive battery materials and management company that provides end-to-end solutions for the EV battery supply chain. With multiple facilities across the United States, Cirba Solutions is a leader in battery recycling and materials recovery, focusing on creating a sustainable, closed-loop ecosystem for battery materials.</p>
+                    <a href="https://www.cirbasolutions.com" target="_blank" class="btn btn-outline-primary btn-sm mt-2"><i class="fas fa-external-link-alt"></i> Company Website</a>
+                </div>
+                
+                <div class="facility-detail-card mt-4">
+                    <h4>Location</h4>
+                    <div id="facilityMap" style="height: 250px;"></div>
+                    <p class="mt-2">
+                        <i class="fas fa-map-marker-alt"></i> Lancaster, OH, USA
+                    </p>
+                </div>
+                
+                <div class="facility-detail-card mt-4">
+                    <h4>Processing Technology</h4>
+                    <p>The Ohio facility employs a multi-step process for battery recycling:</p>
+                    <ul>
+                        <li>Battery discharge and safe handling protocols</li>
+                        <li>Mechanical processing for size reduction and component separation</li>
+                        <li>Advanced sorting technologies to separate materials</li>
+                        <li>Hydrometallurgical processing for metal recovery</li>
+                        <li>Purification systems to achieve battery-grade specifications</li>
+                        <li>Material refinement for reuse in new batteries</li>
+                    </ul>
+                </div>
+                
+                <div class="facility-detail-card mt-4">
+                    <h4>Regional Significance</h4>
+                    <p>The Ohio facility is strategically positioned in the Midwest region, which has a growing concentration of EV and battery manufacturing operations. The Lancaster facility contributes to the local economy by providing skilled jobs and supports the development of a domestic battery supply chain. The facility's expansion, supported by federal funding, highlights its importance in the national strategy for critical material recovery and sustainability.</p>
+                </div>
+                
+                <div class="facility-detail-card mt-4">
+                    <h4>Related Facilities</h4>
+                    <ul class="list-group">
+                        <li class="list-group-item"><a href="cirba-arizona.html">Cirba Solutions Arizona Facility</a></li>
+                        <li class="list-group-item"><a href="cirba-southcarolina.html">Cirba Solutions South Carolina Facility</a></li>
+                        <li class="list-group-item"><a href="licycle-ohio.html">Li-Cycle Ohio Spoke</a></li>
+                        <li class="list-group-item"><a href="redwood-nevada.html">Redwood Materials Nevada Campus</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- Facility Data -->
+    <script src="../js/facilityData.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize facility map
+            const map = L.map('facilityMap').setView([39.7136, -82.5994], 13);
+            
+            // Add OpenStreetMap tile layer
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                maxZoom: 19
+            }).addTo(map);
+            
+            // Add facility marker
+            L.marker([39.7136, -82.5994]).addTo(map)
+                .bindPopup('Cirba Solutions Ohio Facility')
+                .openPopup();
+        });
+    </script>
+</body>
+</html>

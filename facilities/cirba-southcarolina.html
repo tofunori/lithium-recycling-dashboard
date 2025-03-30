@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cirba Solutions South Carolina Facility - Lithium Battery Recycling</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" 
+          crossorigin="">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="mb-4">
+            <a href="../index.html" class="btn btn-outline-primary"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+        </div>
+        
+        <div class="facility-header" style="background-image: url('../images/facilities/cirba-southcarolina.jpg');">
+            <div class="facility-header-content">
+                <h1>Cirba Solutions South Carolina Facility</h1>
+                <p class="lead">Columbia, SC, USA</p>
+                <span class="status-badge status-planned">Planned</span>
+            </div>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-md-8">
+                <div class="facility-detail-card">
+                    <h3>Facility Overview</h3>
+                    <p>The Cirba Solutions South Carolina Facility in Columbia represents a significant expansion of the company's battery recycling capabilities in the southeastern United States. Currently in the planning stage, this facility will be designed to process lithium-ion batteries and manufacturing scrap at a large scale, supporting the growing battery manufacturing ecosystem in the region.</p>
+                    
+                    <p>With a planned processing capacity of 60,000 tonnes per year, the Columbia facility will be one of Cirba Solutions' largest operations. The facility will employ advanced technologies to safely and efficiently recover valuable materials from batteries, including lithium, nickel, cobalt, and copper, contributing to a more sustainable and domestic battery supply chain.</p>
+                    
+                    <p>This investment in South Carolina aligns with the state's growing role as a hub for electric vehicle and battery manufacturing. The facility will create approximately 300 new jobs and represents a significant step in building a circular economy for battery materials in North America.</p>
+                </div>
+                
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <div class="facility-detail-card">
+                            <h4>Technical Specifications</h4>
+                            <ul class="list-unstyled">
+                                <li><strong>Processing Capacity:</strong> 60,000 tonnes per year (planned)</li>
+                                <li><strong>Technology:</strong> Advanced hydrometallurgical processes</li>
+                                <li><strong>Status:</strong> Planned, expected operation 2026</li>
+                                <li><strong>Feedstock:</strong> Lithium-ion batteries and manufacturing scrap</li>
+                                <li><strong>Output:</strong> Battery-grade materials and precursors</li>
+                                <li><strong>Facility Size:</strong> 200,000+ square feet (planned)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="facility-detail-card">
+                            <h4>Environmental Impact</h4>
+                            <ul class="list-unstyled">
+                                <li><strong>GHG Reduction:</strong> Significant carbon reduction vs. primary production</li>
+                                <li><strong>Water Management:</strong> Advanced water recycling systems planned</li>
+                                <li><strong>Waste Diversion:</strong> Near-zero waste target</li>
+                                <li><strong>Resource Recovery:</strong> >95% recovery rate target for key materials</li>
+                                <li><strong>Green Design:</strong> Facility designed for energy efficiency</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="facility-detail-card mt-4">
+                    <h4>Development Timeline</h4>
+                    <div class="timeline">
+                        <div class="timeline-container left">
+                            <div class="timeline-content">
+                                <h5>2023 Q4</h5>
+                                <p>Facility announced</p>
+                            </div>
+                        </div>
+                        <div class="timeline-container right">
+                            <div class="timeline-content">
+                                <h5>2024</h5>
+                                <p>Site selection and permitting</p>
+                            </div>
+                        </div>
+                        <div class="timeline-container left">
+                            <div class="timeline-content">
+                                <h5>2025</h5>
+                                <p>Expected construction start</p>
+                            </div>
+                        </div>
+                        <div class="timeline-container right">
+                            <div class="timeline-content">
+                                <h5>2026</h5>
+                                <p>Projected completion and initial operations</p>
+                            </div>
+                        </div>
+                        <div class="timeline-container left">
+                            <div class="timeline-content">
+                                <h5>2027</h5>
+                                <p>Full-scale operations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="facility-detail-card">
+                    <h4>Company Information</h4>
+                    <div class="text-center mb-3">
+                        <img src="../images/logos/cirba-solutions.png" alt="Cirba Solutions Logo" class="img-fluid" style="max-height: 80px;">
+                    </div>
+                    <p>Cirba Solutions is a comprehensive battery materials and management company that provides end-to-end solutions for the EV battery supply chain. With multiple facilities across the United States, Cirba Solutions is a leader in battery recycling and materials recovery, focusing on creating a sustainable, closed-loop ecosystem for battery materials.</p>
+                    <a href="https://www.cirbasolutions.com" target="_blank" class="btn btn-outline-primary btn-sm mt-2"><i class="fas fa-external-link-alt"></i> Company Website</a>
+                </div>
+                
+                <div class="facility-detail-card mt-4">
+                    <h4>Location</h4>
+                    <div id="facilityMap" style="height: 250px;"></div>
+                    <p class="mt-2">
+                        <i class="fas fa-map-marker-alt"></i> Columbia, SC, USA
+                    </p>
+                </div>
+                
+                <div class="facility-detail-card mt-4">
+                    <h4>Processing Technology</h4>
+                    <p>The planned South Carolina facility will utilize state-of-the-art processing technologies:</p>
+                    <ul>
+                        <li>Advanced battery sorting and preparation systems</li>
+                        <li>Automated disassembly of battery packs and modules</li>
+                        <li>Efficient mechanical processing for material separation</li>
+                        <li>Advanced hydrometallurgical systems for metal recovery</li>
+                        <li>On-site precursor production capabilities</li>
+                        <li>Quality control systems for battery-grade materials</li>
+                    </ul>
+                </div>
+                
+                <div class="facility-detail-card mt-4">
+                    <h4>Regional Significance</h4>
+                    <p>The South Carolina facility will be strategically positioned in the growing southeastern battery manufacturing corridor. South Carolina and neighboring states have attracted significant investments in electric vehicle manufacturing and battery production. The Columbia facility will contribute to the local economy by creating approximately 300 new jobs and will support the development of a robust domestic battery supply chain, reducing dependency on imported materials and enhancing national energy security.</p>
+                </div>
+                
+                <div class="facility-detail-card mt-4">
+                    <h4>Related Facilities</h4>
+                    <ul class="list-group">
+                        <li class="list-group-item"><a href="cirba-ohio.html">Cirba Solutions Ohio Facility</a></li>
+                        <li class="list-group-item"><a href="cirba-arizona.html">Cirba Solutions Arizona Facility</a></li>
+                        <li class="list-group-item"><a href="redwood-southcarolina.html">Redwood Materials South Carolina Campus</a></li>
+                        <li class="list-group-item"><a href="ascend-georgia.html">Ascend Elements Base 1 (Georgia)</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- Facility Data -->
+    <script src="../js/facilityData.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize facility map
+            const map = L.map('facilityMap').setView([34.0007, -81.0348], 13);
+            
+            // Add OpenStreetMap tile layer
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                maxZoom: 19
+            }).addTo(map);
+            
+            // Add facility marker
+            L.marker([34.0007, -81.0348]).addTo(map)
+                .bindPopup('Cirba Solutions South Carolina Facility')
+                .openPopup();
+        });
+    </script>
+</body>
+</html>

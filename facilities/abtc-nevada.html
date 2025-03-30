@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABTC Nevada Recycling Plant - Lithium Battery Recycling</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" 
+          crossorigin="">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="mb-4">
+            <a href="../index.html" class="btn btn-outline-primary"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+        </div>
+        
+        <div class="facility-header" style="background-image: url('../images/facilities/abtc-nevada.jpg');">
+            <div class="facility-header-content">
+                <h1>ABTC Nevada Recycling Plant</h1>
+                <p class="lead">Tahoe Reno Industrial Center, NV, USA</p>
+                <span class="status-badge status-operating">Operating</span>
+            </div>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-md-8">
+                <div class="facility-detail-card">
+                    <h3>Facility Overview</h3>
+                    <p>The American Battery Technology Company (ABTC) Nevada Recycling Plant is located at the Tahoe Reno Industrial Center, one of the largest industrial parks in the United States. This facility represents ABTC's flagship battery recycling operation, utilizing the company's proprietary processes to recover critical battery materials from lithium-ion batteries.</p>
+                    
+                    <p>With a processing capacity of approximately 20,000 tonnes per year, the Nevada plant is designed to handle various forms of lithium-ion battery materials, including manufacturing scrap and end-of-life batteries. The facility employs ABTC's innovative hydrometallurgical battery recycling technologies, which offer lower environmental impacts compared to traditional pyrometallurgical methods.</p>
+                    
+                    <p>A key differentiator of the ABTC approach is the integration of extraction technologies with recycling processes, allowing the company to produce battery-grade materials for direct use in new battery manufacturing. This vertically integrated model supports ABTC's strategy to develop a comprehensive domestic battery materials supply chain.</p>
+                </div>
+                
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <div class="facility-detail-card">
+                            <h4>Technical Specifications</h4>
+                            <ul class="list-unstyled">
+                                <li><strong>Processing Capacity:</strong> 20,000 tonnes per year</li>
+                                <li><strong>Technology:</strong> Proprietary hydrometallurgical process</li>
+                                <li><strong>Operational Since:</strong> 2022</li>
+                                <li><strong>Feedstock:</strong> End-of-life batteries and manufacturing scrap</li>
+                                <li><strong>Output:</strong> Battery-grade materials (lithium, nickel, cobalt, manganese)</li>
+                                <li><strong>Facility Size:</strong> 137,000 square feet</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="facility-detail-card">
+                            <h4>Environmental Impact</h4>
+                            <ul class="list-unstyled">
+                                <li><strong>GHG Reduction:</strong> Lower emissions than conventional recycling methods</li>
+                                <li><strong>Water Management:</strong> Closed-loop water recycling system</li>
+                                <li><strong>Waste Diversion:</strong> Near-zero waste process</li>
+                                <li><strong>Resource Recovery:</strong> >90% recovery rate for critical materials</li>
+                                <li><strong>Energy Use:</strong> Low-temperature processes requiring less energy</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="facility-detail-card mt-4">
+                    <h4>Development Timeline</h4>
+                    <div class="timeline">
+                        <div class="timeline-container left">
+                            <div class="timeline-content">
+                                <h5>2020</h5>
+                                <p>Initial site selection and planning</p>
+                            </div>
+                        </div>
+                        <div class="timeline-container right">
+                            <div class="timeline-content">
+                                <h5>2021 Q2</h5>
+                                <p>Facility construction begins</p>
+                            </div>
+                        </div>
+                        <div class="timeline-container left">
+                            <div class="timeline-content">
+                                <h5>2022 Q1</h5>
+                                <p>Process equipment installation</p>
+                            </div>
+                        </div>
+                        <div class="timeline-container right">
+                            <div class="timeline-content">
+                                <h5>2022 Q3</h5>
+                                <p>Initial operations begin</p>
+                            </div>
+                        </div>
+                        <div class="timeline-container left">
+                            <div class="timeline-content">
+                                <h5>2023</h5>
+                                <p>Full-scale commercial operations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="facility-detail-card">
+                    <h4>Company Information</h4>
+                    <div class="text-center mb-3">
+                        <img src="../images/logos/abtc.png" alt="American Battery Technology Company Logo" class="img-fluid" style="max-height: 80px;">
+                    </div>
+                    <p>American Battery Technology Company (ABTC) is a critical battery materials company focused on recycling, extraction, and qualification of battery metals. ABTC implements its technologies through a closed-loop, environmentally sound process design that combines recycling of end-of-life batteries with primary extraction of battery metals from domestic resources.</p>
+                    <a href="https://americanbatterytechnology.com" target="_blank" class="btn btn-outline-primary btn-sm mt-2"><i class="fas fa-external-link-alt"></i> Company Website</a>
+                </div>
+                
+                <div class="facility-detail-card mt-4">
+                    <h4>Location</h4>
+                    <div id="facilityMap" style="height: 250px;"></div>
+                    <p class="mt-2">
+                        <i class="fas fa-map-marker-alt"></i> Tahoe Reno Industrial Center, NV, USA
+                    </p>
+                </div>
+                
+                <div class="facility-detail-card mt-4">
+                    <h4>Processing Technology</h4>
+                    <p>ABTC's Nevada plant employs a unique hydrometallurgical recycling process:</p>
+                    <ul>
+                        <li>Initial mechanical pre-processing and material separation</li>
+                        <li>Low-temperature selective leaching processes</li>
+                        <li>Advanced separation and purification systems</li>
+                        <li>Direct precipitation of battery materials</li>
+                        <li>Quality assurance and materials characterization</li>
+                        <li>Integrated manufacturing of battery-grade products</li>
+                    </ul>
+                </div>
+                
+                <div class="facility-detail-card mt-4">
+                    <h4>Regional Significance</h4>
+                    <p>The ABTC Nevada Recycling Plant is strategically located in the Tahoe Reno Industrial Center, in proximity to Tesla's Gigafactory and other technology companies. This location provides logistical advantages for sourcing manufacturing scrap and supplying recycled materials back to battery manufacturers. The facility contributes to Nevada's growing clean energy economy and supports the development of a regional battery materials ecosystem in the western United States.</p>
+                </div>
+                
+                <div class="facility-detail-card mt-4">
+                    <h4>Related Facilities</h4>
+                    <ul class="list-group">
+                        <li class="list-group-item"><a href="redwood-nevada.html">Redwood Materials Nevada Campus</a></li>
+                        <li class="list-group-item"><a href="licycle-arizona.html">Li-Cycle Arizona Spoke</a></li>
+                        <li class="list-group-item"><a href="cirba-arizona.html">Cirba Solutions Arizona Facility</a></li>
+                        <li class="list-group-item"><a href="ascend-massachusetts.html">Ascend Elements Massachusetts Operations</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- Facility Data -->
+    <script src="../js/facilityData.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize facility map
+            const map = L.map('facilityMap').setView([39.5150, -119.4594], 13);
+            
+            // Add OpenStreetMap tile layer
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                maxZoom: 19
+            }).addTo(map);
+            
+            // Add facility marker
+            L.marker([39.5150, -119.4594]).addTo(map)
+                .bindPopup('ABTC Nevada Recycling Plant')
+                .openPopup();
+        });
+    </script>
+</body>
+</html>

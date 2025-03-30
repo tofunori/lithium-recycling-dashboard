@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Li-Cycle Alabama Spoke - Lithium Battery Recycling</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" 
+          crossorigin=""/>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="mb-4">
+            <a href="../index.html" class="btn btn-outline-primary"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+        </div>
+        
+        <div class="facility-header" style="background-image: url('../images/facilities/li-cycle-alabama.jpg');">
+            <div class="facility-header-content">
+                <h1>Li-Cycle Alabama Spoke</h1>
+                <p class="lead">2311 Perimeter Rd, Tuscaloosa, AL 35404, USA</p>
+                <span class="status-badge status-operating">Operating</span>
+            </div>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-md-8">
+                <div class="facility-detail-card">
+                    <h3>Facility Overview</h3>
+                    <p>The Li-Cycle Alabama Spoke facility, located in Tuscaloosa, Alabama, began operations in 2022. This facility was strategically placed to support the growing EV manufacturing ecosystem in the Southeastern United States, which has seen significant investment from automotive and battery manufacturers.</p>
+                    
+                    <p>The Alabama Spoke employs Li-Cycle's Generation 3 technology, which uses a submerged shredding process to safely and efficiently process full lithium-ion battery packs without discharging or dismantling them first. This approach improves safety by minimizing fire risk and increases processing efficiency.</p>
+                    
+                    <p>With a processing capacity of 5,000 tonnes per year, the facility can handle various forms of lithium-ion battery materials, including manufacturing scrap and end-of-life batteries, contributing to the creation of a closed-loop battery supply chain in North America.</p>
+                </div>
+                
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <div class="facility-detail-card">
+                            <h4>Technical Specifications</h4>
+                            <ul class="list-unstyled">
+                                <li><strong>Processing Capacity:</strong> 5,000 tonnes per year</li>
+                                <li><strong>Technology:</strong> Generation 3 submerged shredding technology</li>
+                                <li><strong>Start of Operations:</strong> 2022</li>
+                                <li><strong>Feedstock:</strong> Manufacturing scrap and end-of-life batteries</li>
+                                <li><strong>Output:</strong> Black mass and other recyclable materials</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="facility-detail-card">
+                            <h4>Environmental Impact</h4>
+                            <ul class="list-unstyled">
+                                <li><strong>Safety:</strong> Improved safety through submerged processing</li>
+                                <li><strong>GHG Reduction:</strong> Lower carbon footprint than primary production</li>
+                                <li><strong>Resource Recovery:</strong> High recovery rate of critical materials</li>
+                                <li><strong>Waste Diversion:</strong> Prevents batteries from entering landfills</li>
+                                <li><strong>Regional Support:</strong> Reduces transportation emissions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="facility-detail-card mt-4">
+                    <h4>Development Timeline</h4>
+                    <div class="timeline">
+                        <div class="timeline-container left">
+                            <div class="timeline-content">
+                                <h5>2021 Q1</h5>
+                                <p>Facility announced</p>
+                            </div>
+                        </div>
+                        <div class="timeline-container right">
+                            <div class="timeline-content">
+                                <h5>2021 Q3</h5>
+                                <p>Construction began</p>
+                            </div>
+                        </div>
+                        <div class="timeline-container left">
+                            <div class="timeline-content">
+                                <h5>2022 Q2</h5>
+                                <p>Construction completed</p>
+                            </div>
+                        </div>
+                        <div class="timeline-container right">
+                            <div class="timeline-content">
+                                <h5>2022 Q3</h5>
+                                <p>Start of operations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="facility-detail-card">
+                    <h4>Company Information</h4>
+                    <div class="text-center mb-3">
+                        <img src="../images/logos/li-cycle.png" alt="Li-Cycle Logo" class="img-fluid" style="max-height: 80px;">
+                    </div>
+                    <p>Li-Cycle is a leading global lithium-ion battery resource recovery company and the largest lithium-ion battery recycler in North America. The company's innovative "Spoke & Hub" technologies allow for the recovery of critical materials from all types of lithium-ion batteries.</p>
+                    <a href="https://li-cycle.com" target="_blank" class="btn btn-outline-primary btn-sm mt-2"><i class="fas fa-external-link-alt"></i> Company Website</a>
+                </div>
+                
+                <div class="facility-detail-card mt-4">
+                    <h4>Location</h4>
+                    <div id="facilityMap" style="height: 250px;"></div>
+                    <p class="mt-2">
+                        <i class="fas fa-map-marker-alt"></i> 2311 Perimeter Rd, Tuscaloosa, AL 35404, USA
+                    </p>
+                </div>
+                
+                <div class="facility-detail-card mt-4">
+                    <h4>Processing Technology</h4>
+                    <p>Li-Cycle's Generation 3 technology at the Alabama Spoke features a submerged shredding process that offers several advantages:</p>
+                    <ul>
+                        <li>Allows direct processing of full battery packs without disassembly</li>
+                        <li>Significantly reduces fire risk by conducting operations underwater</li>
+                        <li>Increases efficiency by eliminating the need for discharge or manual dismantling</li>
+                        <li>Enables processing of batteries in various states of charge</li>
+                        <li>Produces high-quality black mass suitable for further refining</li>
+                    </ul>
+                </div>
+                
+                <div class="facility-detail-card mt-4">
+                    <h4>Related Facilities</h4>
+                    <ul class="list-group">
+                        <li class="list-group-item"><a href="licycle-arizona.html">Li-Cycle Arizona Spoke</a></li>
+                        <li class="list-group-item"><a href="licycle-ontario.html">Li-Cycle Ontario Spoke</a></li>
+                        <li class="list-group-item"><a href="licycle-ohio.html">Li-Cycle Ohio Spoke</a></li>
+                        <li class="list-group-item"><a href="licycle-rochester.html">Li-Cycle North American Hub</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- Facility Data -->
+    <script src="../js/facilityData.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize facility map
+            const map = L.map('facilityMap').setView([33.2321735, -87.6110232], 13);
+            
+            // Add OpenStreetMap tile layer
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                maxZoom: 19
+            }).addTo(map);
+            
+            // Add facility marker
+            L.marker([33.2321735, -87.6110232]).addTo(map)
+                .bindPopup('Li-Cycle Alabama Spoke')
+                .openPopup();
+        });
+    </script>
+</body>
+</html>

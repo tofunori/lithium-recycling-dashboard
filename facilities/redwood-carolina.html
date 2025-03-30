@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redwood Materials South Carolina Campus - Lithium Battery Recycling</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" 
+          crossorigin="">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="mb-4">
+            <a href="../index.html" class="btn btn-outline-primary"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+        </div>
+        
+        <div class="facility-header" style="background-image: url('../images/facilities/redwood-southcarolina.jpg');">
+            <div class="facility-header-content">
+                <h1>Redwood Materials South Carolina Campus</h1>
+                <p class="lead">Berkeley County, SC, USA</p>
+                <span class="status-badge status-construction">Under Construction</span>
+            </div>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-md-8">
+                <div class="facility-detail-card">
+                    <h3>Facility Overview</h3>
+                    <p>The Redwood Materials South Carolina Campus represents one of the largest investments in battery recycling and materials production in North America. Located in Berkeley County, South Carolina, this $3.5 billion facility is currently under construction and will significantly expand Redwood's capacity to recycle lithium-ion batteries and produce sustainable battery materials.</p>
+                    
+                    <p>Once operational, the facility will have the capacity to produce enough anode and cathode material for more than one million electric vehicles annually. The campus will support the growing battery manufacturing ecosystem in the southeastern United States, which has seen substantial investments from automotive manufacturers and battery producers.</p>
+                    
+                    <p>Like Redwood's Nevada facility, the South Carolina Campus will implement the company's integrated approach - recycling lithium-ion batteries and producing new battery materials on-site. This vertical integration creates a true circular economy for battery materials, reducing the need for newly mined resources and lowering the environmental impact of battery production.</p>
+                </div>
+                
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <div class="facility-detail-card">
+                            <h4>Technical Specifications</h4>
+                            <ul class="list-unstyled">
+                                <li><strong>Processing Capacity:</strong> 100,000+ tonnes per year (planned)</li>
+                                <li><strong>Technology:</strong> Integrated hydrometallurgical process</li>
+                                <li><strong>Planned Start:</strong> Phased opening beginning 2024-2025</li>
+                                <li><strong>Feedstock:</strong> Manufacturing scrap and end-of-life batteries</li>
+                                <li><strong>Output:</strong> Anode and cathode materials for 1M+ EVs annually</li>
+                                <li><strong>Facility Size:</strong> 600+ acres campus</li>
+                                <li><strong>Investment:</strong> $3.5 billion</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="facility-detail-card">
+                            <h4>Environmental Impact</h4>
+                            <ul class="list-unstyled">
+                                <li><strong>GHG Reduction:</strong> 80-90% lower carbon emissions than primary mining</li>
+                                <li><strong>Water Management:</strong> Advanced closed-loop water recycling systems</li>
+                                <li><strong>Waste Diversion:</strong> Near-zero waste to landfill target</li>
+                                <li><strong>Resource Recovery:</strong> >95% recovery rate for critical materials</li>
+                                <li><strong>Energy Use:</strong> Renewable energy integration planned</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="facility-detail-card mt-4">
+                    <h4>Development Timeline</h4>
+                    <div class="timeline">
+                        <div class="timeline-container left">
+                            <div class="timeline-content">
+                                <h5>2022 Q4</h5>
+                                <p>Facility announced with $3.5B investment</p>
+                            </div>
+                        </div>
+                        <div class="timeline-container right">
+                            <div class="timeline-content">
+                                <h5>2023 Q1</h5>
+                                <p>Site preparation began</p>
+                            </div>
+                        </div>
+                        <div class="timeline-container left">
+                            <div class="timeline-content">
+                                <h5>2023 Q3</h5>
+                                <p>Construction started</p>
+                            </div>
+                        </div>
+                        <div class="timeline-container right">
+                            <div class="timeline-content">
+                                <h5>2024 Q4</h5>
+                                <p>Phase 1 expected completion</p>
+                            </div>
+                        </div>
+                        <div class="timeline-container left">
+                            <div class="timeline-content">
+                                <h5>2025</h5>
+                                <p>Initial operations to begin</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="facility-detail-card">
+                    <h4>Company Information</h4>
+                    <div class="text-center mb-3">
+                        <img src="../images/logos/redwood-materials.png" alt="Redwood Materials Logo" class="img-fluid" style="max-height: 80px;">
+                    </div>
+                    <p>Redwood Materials is a circular supply chain company founded by JB Straubel, the former CTO and co-founder of Tesla. The company is focused on producing sustainable battery materials and recycling lithium-ion batteries to create a closed-loop battery supply chain in North America.</p>
+                    <a href="https://www.redwoodmaterials.com" target="_blank" class="btn btn-outline-primary btn-sm mt-2"><i class="fas fa-external-link-alt"></i> Company Website</a>
+                </div>
+                
+                <div class="facility-detail-card mt-4">
+                    <h4>Location</h4>
+                    <div id="facilityMap" style="height: 250px;"></div>
+                    <p class="mt-2">
+                        <i class="fas fa-map-marker-alt"></i> Berkeley County, SC, USA
+                    </p>
+                </div>
+                
+                <div class="facility-detail-card mt-4">
+                    <h4>Processing Technology</h4>
+                    <p>The South Carolina Campus will utilize advanced integrated processes:</p>
+                    <ul>
+                        <li>Battery disassembly and mechanical processing</li>
+                        <li>Hydrometallurgical processing for metal extraction</li>
+                        <li>Chemical refining to battery-grade materials</li>
+                        <li>Cathode active material production</li>
+                        <li>Anode copper foil manufacturing</li>
+                        <li>Quality control and advanced automation systems</li>
+                    </ul>
+                </div>
+                
+                <div class="facility-detail-card mt-4">
+                    <h4>Regional Significance</h4>
+                    <p>The South Carolina Campus is strategically located in the rapidly growing southeastern battery manufacturing corridor. This region has attracted major investments from automotive manufacturers like BMW, Mercedes-Benz, Hyundai, and battery producers. The facility is expected to create approximately 1,500 jobs and will be a cornerstone of the domestic battery supply chain, reducing dependency on imported materials.</p>
+                </div>
+                
+                <div class="facility-detail-card mt-4">
+                    <h4>Related Facilities</h4>
+                    <ul class="list-group">
+                        <li class="list-group-item"><a href="redwood-nevada.html">Redwood Materials Nevada Campus</a></li>
+                        <li class="list-group-item"><a href="cirba-southcarolina.html">Cirba Solutions South Carolina Facility</a></li>
+                        <li class="list-group-item"><a href="ascend-georgia.html">Ascend Elements Base 1 (Georgia)</a></li>
+                        <li class="list-group-item"><a href="licycle-alabama.html">Li-Cycle Alabama Spoke</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- Facility Data -->
+    <script src="../js/facilityData.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize facility map
+            const map = L.map('facilityMap').setView([33.1039, -79.9526], 13);
+            
+            // Add OpenStreetMap tile layer
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                maxZoom: 19
+            }).addTo(map);
+            
+            // Add facility marker
+            L.marker([33.1039, -79.9526]).addTo(map)
+                .bindPopup('Redwood Materials South Carolina Campus')
+                .openPopup();
+        });
+    </script>
+</body>
+</html>

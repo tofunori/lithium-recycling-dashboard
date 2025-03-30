@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redwood Materials Nevada Campus - Lithium Battery Recycling</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" 
+          crossorigin="">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="mb-4">
+            <a href="../index.html" class="btn btn-outline-primary"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+        </div>
+        
+        <div class="facility-header" style="background-image: url('../images/facilities/redwood-nevada.jpg');">
+            <div class="facility-header-content">
+                <h1>Redwood Materials Nevada Campus</h1>
+                <p class="lead">McCarran, NV, USA</p>
+                <span class="status-badge status-operating">Operating</span>
+            </div>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-md-8">
+                <div class="facility-detail-card">
+                    <h3>Facility Overview</h3>
+                    <p>The Redwood Materials Nevada Campus is the company's flagship facility located in McCarran, Nevada. Founded by JB Straubel, former CTO of Tesla, Redwood Materials has established itself as a leading battery materials and recycling company in North America.</p>
+                    
+                    <p>With a processing capacity exceeding 40,000 tonnes per year, the Nevada Campus is one of the largest lithium-ion battery recycling facilities in North America. The facility is designed to process various forms of battery materials, including manufacturing scrap, production waste, and end-of-life batteries from electric vehicles and consumer electronics.</p>
+                    
+                    <p>What distinguishes Redwood Materials is its integrated approach - the facility not only recycles lithium-ion batteries but also manufactures new battery materials, creating a true closed-loop system. The Nevada Campus employs advanced hydrometallurgical processes to recover critical materials like lithium, nickel, cobalt, and copper at high purity levels, which are then used to produce battery materials for new batteries.</p>
+                </div>
+                
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <div class="facility-detail-card">
+                            <h4>Technical Specifications</h4>
+                            <ul class="list-unstyled">
+                                <li><strong>Processing Capacity:</strong> 40,000+ tonnes per year</li>
+                                <li><strong>Technology:</strong> Integrated hydrometallurgical process</li>
+                                <li><strong>Operational Since:</strong> 2020</li>
+                                <li><strong>Feedstock:</strong> Manufacturing scrap, production waste, and end-of-life batteries</li>
+                                <li><strong>Output:</strong> Battery-grade materials (cathode and anode precursors)</li>
+                                <li><strong>Facility Size:</strong> Over 150,000 square feet</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="facility-detail-card">
+                            <h4>Environmental Impact</h4>
+                            <ul class="list-unstyled">
+                                <li><strong>GHG Reduction:</strong> 80-90% lower carbon emissions than primary mining</li>
+                                <li><strong>Water Management:</strong> Closed-loop water recycling systems</li>
+                                <li><strong>Waste Diversion:</strong> Near-zero waste to landfill operations</li>
+                                <li><strong>Resource Recovery:</strong> >95% recovery rate for critical materials</li>
+                                <li><strong>Energy Use:</strong> Powered by renewable energy sources</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="facility-detail-card mt-4">
+                    <h4>Development Timeline</h4>
+                    <div class="timeline">
+                        <div class="timeline-container left">
+                            <div class="timeline-content">
+                                <h5>2017</h5>
+                                <p>Redwood Materials founded by JB Straubel</p>
+                            </div>
+                        </div>
+                        <div class="timeline-container right">
+                            <div class="timeline-content">
+                                <h5>2019</h5>
+                                <p>Initial facility construction</p>
+                            </div>
+                        </div>
+                        <div class="timeline-container left">
+                            <div class="timeline-content">
+                                <h5>2020</h5>
+                                <p>Initial operations began</p>
+                            </div>
+                        </div>
+                        <div class="timeline-container right">
+                            <div class="timeline-content">
+                                <h5>2022</h5>
+                                <p>Major capacity expansion</p>
+                            </div>
+                        </div>
+                        <div class="timeline-container left">
+                            <div class="timeline-content">
+                                <h5>2023</h5>
+                                <p>Anode and cathode material production added</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="facility-detail-card">
+                    <h4>Company Information</h4>
+                    <div class="text-center mb-3">
+                        <img src="../images/logos/redwood-materials.png" alt="Redwood Materials Logo" class="img-fluid" style="max-height: 80px;">
+                    </div>
+                    <p>Redwood Materials is a circular supply chain company founded by JB Straubel, the former CTO and co-founder of Tesla. The company is focused on producing sustainable battery materials and recycling lithium-ion batteries to create a closed-loop battery supply chain in North America.</p>
+                    <a href="https://www.redwoodmaterials.com" target="_blank" class="btn btn-outline-primary btn-sm mt-2"><i class="fas fa-external-link-alt"></i> Company Website</a>
+                </div>
+                
+                <div class="facility-detail-card mt-4">
+                    <h4>Location</h4>
+                    <div id="facilityMap" style="height: 250px;"></div>
+                    <p class="mt-2">
+                        <i class="fas fa-map-marker-alt"></i> McCarran, NV, USA
+                    </p>
+                </div>
+                
+                <div class="facility-detail-card mt-4">
+                    <h4>Processing Technology</h4>
+                    <p>The Nevada Campus utilizes an integrated hydrometallurgical process:</p>
+                    <ul>
+                        <li>Initial mechanical processing and shredding</li>
+                        <li>Advanced material separation techniques</li>
+                        <li>Chemical leaching processes to extract valuable metals</li>
+                        <li>Metal purification systems to achieve battery-grade purity</li>
+                        <li>On-site production of anode copper foil and cathode active materials</li>
+                        <li>Quality control systems to ensure consistent output</li>
+                    </ul>
+                </div>
+                
+                <div class="facility-detail-card mt-4">
+                    <h4>Regional Significance</h4>
+                    <p>The Nevada Campus is strategically located near Tesla's Gigafactory and other battery manufacturers, enabling efficient recycling of production scrap and minimizing transportation emissions. The facility has created hundreds of jobs in the region and contributes to establishing a domestic battery supply chain, reducing dependency on imported materials and supporting the growth of the North American EV industry.</p>
+                </div>
+                
+                <div class="facility-detail-card mt-4">
+                    <h4>Related Facilities</h4>
+                    <ul class="list-group">
+                        <li class="list-group-item"><a href="redwood-southcarolina.html">Redwood Materials South Carolina Campus</a></li>
+                        <li class="list-group-item"><a href="licycle-rochester.html">Li-Cycle North American Hub</a></li>
+                        <li class="list-group-item"><a href="abtc-nevada.html">ABTC Nevada Recycling Plant</a></li>
+                        <li class="list-group-item"><a href="cirba-arizona.html">Cirba Solutions Arizona Facility</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- Facility Data -->
+    <script src="../js/facilityData.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize facility map
+            const map = L.map('facilityMap').setView([39.5517, -119.4517], 13);
+            
+            // Add OpenStreetMap tile layer
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                maxZoom: 19
+            }).addTo(map);
+            
+            // Add facility marker
+            L.marker([39.5517, -119.4517]).addTo(map)
+                .bindPopup('Redwood Materials Nevada Campus')
+                .openPopup();
+        });
+    </script>
+</body>
+</html>
